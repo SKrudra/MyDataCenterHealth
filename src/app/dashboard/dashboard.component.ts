@@ -21,13 +21,11 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   cpu: Metric;
   mem: Metric;
-  cluster1: Node[];
-  cluster2: Node[];
+  cluster1: Node[] = [];
+  cluster2: Node[] = [];
   interval: any;
 
   constructor() {
-    this.cluster1 = [];
-    this.cluster2 = [];
     this.cpu = {used: 0, available: 0};
     this.mem = {used: 0, available: 0};
   }
