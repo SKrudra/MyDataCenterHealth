@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { Component, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'MyDataCenterHealth';
+  @ViewChild(DashboardComponent) dashboard!: DashboardComponent; // Non-null assertion operator
+
+  refresh() {
+    this.dashboard.generateData();
+  }
 }
